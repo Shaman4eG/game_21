@@ -70,7 +70,7 @@ INSERT INTO cards(`value`, `suit`) VALUES
 INSERT INTO Constant VALUES ();
 
 INSERT INTO players(`Name`) VALUES
-('Arkadiy'), ('Michael'), ('Konstantin'), ('George'), ('Elena'), ('Julia'), ('Federico');
+('Dealer'), ('Arkadiy'), ('Michael'), ('Konstantin'), ('George'), ('Elena'), ('Julia'), ('Federico');
 
 
 Select *

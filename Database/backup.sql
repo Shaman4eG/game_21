@@ -36,6 +36,7 @@ CREATE TABLE `cards` (
 
 LOCK TABLES `cards` WRITE;
 /*!40000 ALTER TABLE `cards` DISABLE KEYS */;
+INSERT INTO `cards` VALUES (1,2,'s'),(2,3,'s'),(3,4,'s'),(4,6,'s'),(5,7,'s'),(6,8,'s'),(7,9,'s'),(8,10,'s'),(9,11,'s'),(10,2,'c'),(11,3,'c'),(12,4,'c'),(13,6,'c'),(14,7,'c'),(15,8,'c'),(16,9,'c'),(17,10,'c'),(18,11,'c'),(19,2,'h'),(20,3,'h'),(21,4,'h'),(22,6,'h'),(23,7,'h'),(24,8,'h'),(25,9,'h'),(26,10,'h'),(27,11,'h'),(28,2,'d'),(29,3,'d'),(30,4,'d'),(31,6,'d'),(32,7,'d'),(33,8,'d'),(34,9,'d'),(35,10,'d'),(36,11,'d');
 /*!40000 ALTER TABLE `cards` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -85,6 +86,7 @@ CREATE TABLE `constant` (
 
 LOCK TABLES `constant` WRITE;
 /*!40000 ALTER TABLE `constant` DISABLE KEYS */;
+INSERT INTO `constant` VALUES (5,7,2);
 /*!40000 ALTER TABLE `constant` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,7 +133,7 @@ CREATE TABLE `game` (
   KEY `FK_Game_Hands` (`hands_turn`),
   CONSTRAINT `FK_Game_Cards` FOREIGN KEY (`dealer_first_card_id`) REFERENCES `cards` (`id`),
   CONSTRAINT `FK_Game_Hands` FOREIGN KEY (`hands_turn`) REFERENCES `hands` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +191,7 @@ CREATE TABLE `hands` (
   CONSTRAINT `FK_Hands_Game` FOREIGN KEY (`game_id`) REFERENCES `game` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_Hands_Hands` FOREIGN KEY (`next_hand_id`) REFERENCES `hands` (`id`),
   CONSTRAINT `FK_Hands_Players` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,7 +216,7 @@ CREATE TABLE `players` (
   `wins` int(11) NOT NULL DEFAULT '0',
   `amount_of_games` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -223,6 +225,7 @@ CREATE TABLE `players` (
 
 LOCK TABLES `players` WRITE;
 /*!40000 ALTER TABLE `players` DISABLE KEYS */;
+INSERT INTO `players` VALUES (1,'Dealer',0,0);
 /*!40000 ALTER TABLE `players` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -1102,4 +1105,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-19  7:37:42
+-- Dump completed on 2018-06-19  9:15:09

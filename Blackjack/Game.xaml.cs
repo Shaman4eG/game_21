@@ -33,7 +33,8 @@ namespace Blackjack
         private int _playerHandId;
         private List<int> _playerCards;
 
-        private const int _dealerId = 11;
+        // WARNING!!! CHECK EXISTENS IN DB
+        private const int _dealerId = 1;
         private int _dealerHandId;
         private List<int> _dealerCards;
 
