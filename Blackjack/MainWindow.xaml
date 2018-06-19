@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Blackjack"
         mc:Ignorable="d"
-        Title="21" Height="700" Width="900" ResizeMode="NoResize">
+        Closing="OnWindowCloseAction"
+        Title="Game 21" Height="700" Width="900" ResizeMode="NoResize">
 
     <!-- Frame for page navigation -->
     <DockPanel>

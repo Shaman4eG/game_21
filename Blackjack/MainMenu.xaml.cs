@@ -23,7 +23,6 @@ namespace Blackjack
     /// </summary>
     public partial class MainMenu : Page
     {
-        private const string connectionString = "server=localhost;user=root;database=game_21;port=3306;password=root";
         private const string register_new_player = "register_new_player";
         private const string login = "login";
 
@@ -44,7 +43,7 @@ namespace Blackjack
             int playerId;
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                using (MySqlConnection connection = new MySqlConnection(MainWindow.connectionString))
                 {
                     connection.Open();
 
@@ -87,7 +86,7 @@ namespace Blackjack
         {
             ResultStatus loginResult;
             int playerId;
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(MainWindow.connectionString))
             {
                 connection.Open();
 
